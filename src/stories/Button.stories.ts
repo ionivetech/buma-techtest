@@ -7,7 +7,10 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
     label: { type: 'string' },
-    variant: { control: 'select', options: ['primary', 'secondary', 'tertiary'] },
+    variant: {
+      control: 'select',
+      options: ['primary', 'secondary', 'tertiary', 'outline', 'textline']
+    },
     icon: { control: 'select', options: ['PencilIcon', 'TrashIcon', 'CheckIcon'] },
     iconPosition: { control: 'select', options: ['left', 'right'] }
   }
@@ -65,7 +68,6 @@ export const IconRight: Story = {
   }
 }
 export const IconOnly: Story = {
-  name: 'Icon Only',
   args: {
     variant: 'primary',
     icon: 'PencilIcon'

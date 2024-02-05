@@ -1,7 +1,11 @@
 //////////////////// Utilities ////////////////////
 // Variabes
 @import './utils/variables';
+// Transition
+@import './utils/transition';
 
 //////////////////// Components ////////////////////
 // Button
-@import './components/button.scss'
+@import './components/button.scss';
+// Modal
+@import './components/modal.scss';

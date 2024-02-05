@@ -1,0 +1,96 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #1717177e;
+
+  &__dialog {
+    position: relative;
+    width: 328px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 24px;
+    background-color: $white;
+    border-radius: 30px;
+
+    &__close-icon {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 24px;
+      height: 24px;
+      color: $light-black;
+      cursor: pointer;
+    }
+
+    &__title {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 28px;
+      color: $black;
+      text-align: center;
+      margin: 0;
+
+      &--pwa {
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+
+    &__body-text {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 16px;
+      color: $black;
+      text-align: center;
+      margin: 0;
+    }
+
+    &__footer {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      &__button {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+
+        // Variant
+        &--pwa {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 16px;
+        }
+        &--pwa-v2 {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-auto-rows: 1fr 1fr;
+          grid-gap: 16px;
+        }
+      }
+    }
+
+    // Size variant
+    &--pwa, &--pwa-v2 {
+      width: 328px;
+    }
+    &--sm {
+      width: 500px;
+    }
+    &--md {
+      width: 720px;
+    }
+    &--lg {
+      width: 1024px;
+    }
+  }
+}
