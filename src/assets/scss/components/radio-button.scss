@@ -1,0 +1,63 @@
+.radio-button {
+  &__list {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: $white;
+    border-radius: 5px;
+    border: 1px solid $gray-border;
+    padding: 0 8px;
+    cursor: pointer;
+    transition: border-color ease 0.3s;
+
+    &__check {
+      box-sizing: border-box;
+      width: 16px;
+      min-width: 16px;
+      max-width: 16px;
+      height: 16px;
+      min-height: 16px;
+      max-height: 16px;
+      border-radius: 8px;
+      background-color: $secondary;
+      border: 1px solid $light-black;
+      transition: all ease 0.3s;
+    }
+
+    &__text {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 16px;
+      color: $black;
+    }
+
+    // Variant
+    &--checked {
+      border-color: $primary;
+    }
+    &--checked & {
+      &__check {
+        background-color: $white;
+        border: 6px solid $primary;
+      }
+    }
+  }
+
+  // Variant
+  &--sm {
+    max-width: 402px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 16px;
+    grid-row-gap: 8px;
+  }
+  &--lg {
+    max-width: 1256px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(196px, 1fr));
+    grid-column-gap: 16px;
+    grid-row-gap: 8px;
+  }
+}

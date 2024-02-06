@@ -27,7 +27,7 @@ const dummyData: IDummyData[] = [
 ]
 
 const meta = {
-  title: 'Components/Multiselect',
+  title: 'Components/Multiple Select',
   component: MultipleSelect as unknown as Record<string, unknown>,
   tags: ['autodocs'],
   argTypes: {
@@ -77,7 +77,14 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-  args: {}
+  args: {},
+  parameters: {
+    docs: {
+      source: {
+        code: ''
+      }
+    }
+  }
 }
 
 export const ShowDeleteAll: Story = {
