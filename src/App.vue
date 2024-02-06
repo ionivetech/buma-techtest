@@ -1,29 +1,61 @@
 <script lang="ts" setup>
-import Button from '@/components/Button.vue'
-import Modal from '@/components/Modal.vue'
+import { ref } from 'vue'
+import MultipleSelect from '@/components/MultipleSelect.vue'
+
+interface IDummyData {
+  id: number
+  name: string
+  address: string
+}
+
+const dummyData: IDummyData[] = [
+  {
+    id: 1,
+    name: 'farid',
+    address: 'Bekasi'
+  },
+  {
+    id: 2,
+    name: 'fardan',
+    address: 'Jakarta Utara'
+  },
+  {
+    id: 3,
+    name: 'Diana',
+    address: 'Bekasi Utara'
+  },
+  {
+    id: 4,
+    name: 'Ferdinand',
+    address: 'Medan'
+  }
+]
+
+const selected = ref<IDummyData[]>([
+  {
+    id: 1,
+    name: 'farid',
+    address: 'Bekasi'
+  },
+  {
+    id: 2,
+    name: 'fardan',
+    address: 'Jakarta Utara'
+  }
+])
 </script>
 
 <template>
   <div>
-    <Modal
-      size="sm"
-      title="Woohooo"
-      body-text="... is successfully ..."
-    >
-      <template #trigger="{ openModal }">
-        <Button
-          label="Open Modal"
-          @click="openModal"
-        />
-      </template>
-      <template #above-title>
-        <img
-          src="@/assets/illustrations/illustration.svg"
-          alt="illustration modal"
-          width="140"
-          height="140"
-        />
-      </template>
-    </Modal>
+    <MultipleSelect
+      v-model="selected"
+      :options="dummyData"
+      unique-key="id"
+      label-key="name"
+      label-text="Pilih Siswa"
+      :show-delete-all="true"
+      :required="true"
+      validation-text="Bisa pilih lebih dari 1"
+    />
   </div>
 </template>
