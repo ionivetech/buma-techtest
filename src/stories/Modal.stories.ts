@@ -4,13 +4,6 @@ import Modal from '@/components/Modal.vue'
 import Button from '@/components/Button.vue'
 import Illustration from '@/assets/illustrations/Illustration.svg'
 
-const illustrationImage = {
-  src: Illustration,
-  alt: 'illustration modal',
-  width: '140',
-  height: '140'
-}
-
 const meta = {
   title: 'Components/Modal',
   component: Modal,
@@ -31,9 +24,36 @@ const meta = {
     bodyText: '... is successfully ...',
     hasCloseIcon: true,
     hasLeftButton: true,
-    hasRightButton: true,
-    trigger: ({ openModal }) => h(Button, { label: 'Open Modal', onClick: () => openModal() }),
-    'above-title': () => h('img', illustrationImage)
+    hasRightButton: true
+  },
+  render(args: any) {
+    return {
+      components: { Modal, Button },
+      setup() {
+        const illustrationImage = {
+          src: Illustration,
+          alt: 'illustration modal',
+          width: '140',
+          height: '140'
+        }
+
+        return { args, illustrationImage }
+      },
+      template: `
+      <Modal v-bind="args">
+        <template #trigger="{ openModal }">
+          <Button
+            label="click me"
+            @click="openModal"
+          />
+        </template>
+
+        <template #above-title>
+          <img v-bind="illustrationImage" />
+        </template>
+      </Modal>
+      `
+    }
   }
 } satisfies Meta<typeof Modal>
 
@@ -43,6 +63,43 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   args: {
     size: 'sm'
+  },
+  parameters: {
+    docs: {
+      source: {
+        code: `
+          <script setup>
+            const illustrationImage = {
+              src: Illustration,
+              alt: 'illustration modal',
+              width: '140',
+              height: '140'
+            }
+          </script>
+
+          <template>
+            <Modal
+              title="Woohooo",
+              bodyText: "... is successfully ...",
+              hasCloseIcon
+              hasLeftButton
+              hasRightButton
+            >
+              <template #trigger="{ openModal }">
+                <Button
+                  label="click me"
+                  @click="openModal"
+                />
+              </template>
+      
+              <template #above-title>
+                <img v-bind="illustrationImage" />
+              </template>
+            </Modal>
+          </template>
+        `
+      }
+    }
   }
 }
 
