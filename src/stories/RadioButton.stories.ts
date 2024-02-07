@@ -1,11 +1,7 @@
 import { ref } from 'vue'
 import type { Meta, StoryObj } from '@storybook/vue3'
 import RadioButton from '@/components/RadioButton.vue'
-
-interface IOptions {
-  id: string | number
-  name: string
-}
+import type { IOptions } from '@/components/RadioButton.vue'
 
 const dummyOptions: IOptions[] = [
   {

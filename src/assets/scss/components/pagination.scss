@@ -1,0 +1,112 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  &__grid {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &__label {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 16px;
+      color: $black;
+    }
+
+    &__input {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      &__data {
+        display: inline-block;
+        padding: 4px 16px;
+        background-color: $white;
+        border: 1px solid $gray-border;
+        border-radius: 5px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        color: $black;
+        text-align: center;
+
+        &:focus {
+          border-color: $primary;
+          outline: none;
+        }
+      }
+
+      &__operator {
+        width: 12px;
+        height: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        background-color: $white;
+        border: 1px solid $gray-border;
+        border-radius: 5px;
+
+        svg {
+          width: 10px;
+          height: 10px;
+          color: $black;
+          opacity: 0.7;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &__page {
+    display: flex;
+    gap: 8px;
+
+    &__button {
+      box-sizing: border-box;
+      min-width: 24px;
+      height: 24px;
+      background-color: $white;
+      border: 1px solid $gray-border;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 16px;
+      color: $light-black;
+      cursor: pointer;
+
+      svg {
+        width: 14px;
+        height: 14px;
+      }
+
+      // Variant
+      &--prev-next {
+        width: 24px;
+        background-color: $primary;
+        border-color: $primary;
+        color: $white;
+
+        &--disable {
+          background-color: $white;
+          color: $light-black;
+          border-color: $light-black;
+          cursor: default;
+        }
+      }
+      &--active {
+        border-color: $primary;
+        color: $primary;
+        cursor: default;
+      }
+    }
+  }
+}

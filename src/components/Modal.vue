@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import Button from './Button.vue'
 // Icons
-import { XMarkIcon } from '@heroicons/vue/24/solid'
+import { X } from 'lucide-vue-next'
 
 interface Props {
   size?: 'pwa' | 'pwa-v2' | 'sm' | 'md' | 'lg'
@@ -57,7 +57,7 @@ const closeModal = () => {
             :class="`modal__dialog modal__dialog--${size}`"
           >
             <!-- Close icon -->
-            <XMarkIcon
+            <X
               v-if="hasCloseIcon"
               class="modal__dialog__close-icon"
               @click="closeModal"

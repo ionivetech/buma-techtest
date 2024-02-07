@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 import FormGroup from '@/components/FormGroup.vue'
 
-interface Options {
+export interface IOptions {
   id: string | number
   name: string
 }
 interface Props {
-  options: Options[]
+  options: IOptions[]
   size?: 'sm' | 'lg'
   labelText?: string
   validationText?: string
@@ -20,7 +20,7 @@ withDefaults(defineProps<Props>(), {
   required: false
 })
 
-const modelValue = defineModel<Options>()
+const modelValue = defineModel<IOptions>()
 </script>
 
 <template>

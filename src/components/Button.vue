@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 // Icons
-import * as Icons from '@heroicons/vue/24/solid'
+import * as Icons from 'lucide-vue-next'
 
 interface Props {
   label?: string

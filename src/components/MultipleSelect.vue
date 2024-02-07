@@ -3,8 +3,8 @@ import { ref, computed } from 'vue'
 import FormGroup from '@/components/FormGroup.vue'
 import { onClickOutside } from '@vueuse/core'
 // Icons
-import { XCircleIcon } from '@heroicons/vue/24/outline'
-import { ChevronDownIcon, XCircleIcon as XCircleIconSolid } from '@heroicons/vue/24/solid'
+import { XCircle, ChevronDown } from 'lucide-vue-next'
+import { XCircleIcon as XCircleIconSolid } from '@heroicons/vue/24/solid'
 
 interface Props {
   options: T[]
@@ -131,7 +131,7 @@ onClickOutside(multiselectRef, () => {
             class="multiple-select__clear-all"
           >
             <div class="multiple-select__clear-all__divider" />
-            <XCircleIcon @click="clearAllSelected" />
+            <XCircle @click="clearAllSelected" />
           </div>
 
           <!-- Dropdown toggle -->
@@ -139,7 +139,7 @@ onClickOutside(multiselectRef, () => {
             class="multiple-select__dropdown-toggle"
             @click="toggleDropdownList"
           >
-            <ChevronDownIcon />
+            <ChevronDown />
           </div>
         </div>
       </div>
