@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import Button from './Button.vue'
+import { onClickOutside } from '@vueuse/core'
 // Icons
 import { X } from 'lucide-vue-next'
 
@@ -20,6 +21,7 @@ withDefaults(defineProps<Props>(), {
   hasRightButton: true
 })
 
+const modalDialogRef = ref()
 const showModal = ref<boolean>(false)
 const showBackdrop = ref<boolean>(false)
 
@@ -35,6 +37,11 @@ const closeModal = () => {
     showBackdrop.value = false
   }, 100)
 }
+
+// Click outside
+onClickOutside(modalDialogRef, () => {
+  closeModal()
+})
 </script>
 
 <template>
@@ -54,6 +61,7 @@ const closeModal = () => {
         <Transition name="scale">
           <div
             v-if="showModal"
+            ref="modalDialogRef"
             :class="`modal__dialog modal__dialog--${size}`"
           >
             <!-- Close icon -->

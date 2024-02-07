@@ -8,22 +8,10 @@ interface IDummyData {
 }
 
 const dummyData: IDummyData[] = [
-  {
-    id: 1,
-    city: 'Jakarta'
-  },
-  {
-    id: 2,
-    city: 'Bekasi'
-  },
-  {
-    id: 3,
-    city: 'Bandung'
-  },
-  {
-    id: 4,
-    city: 'Medan'
-  }
+  { id: 1, city: 'Jakarta' },
+  { id: 2, city: 'Bekasi' },
+  { id: 3, city: 'Bandung' },
+  { id: 4, city: 'Medan' }
 ]
 
 const meta = {
@@ -81,7 +69,31 @@ export const Default: Story = {
   parameters: {
     docs: {
       source: {
-        code: ''
+        code: `
+          <script setup>
+            const selected = ref([
+              {
+                id: 1,
+                city: 'Jakarta'
+              },
+              {
+                id: 2,
+                city: 'Bekasi'
+              }
+            ])
+
+            const dummyData: IDummyData[] = [
+              { id: 1, city: 'Jakarta' },
+              { id: 2, city: 'Bekasi' },
+              { id: 3, city: 'Bandung' },
+              { id: 4, city: 'Medan' }
+            ]
+          </script>
+
+          <template>
+            <MultipleSelect v-model="selected" :options="dummyData" required />
+          </template>
+        `
       }
     }
   }

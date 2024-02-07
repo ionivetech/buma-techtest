@@ -35,10 +35,16 @@ export const Default: Story = {
     docs: {
       source: {
         code: `
-        <Pagination
-          v-model="page"
-          :total-data="76"
-        />
+          <script setup>
+            const page = ref(1)
+          </script>
+
+          <template>
+            <Pagination
+              v-model="page"
+              :total-data="76"
+            />
+          </template>
         `
       }
     }

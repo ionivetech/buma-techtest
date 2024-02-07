@@ -40,6 +40,12 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
+export const Default: Story = {
+  args: {
+    size: 'sm'
+  }
+}
+
 export const PwaV2: Story = {
   name: 'PWA V2',
   args: {

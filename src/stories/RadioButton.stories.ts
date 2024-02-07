@@ -4,34 +4,13 @@ import RadioButton from '@/components/RadioButton.vue'
 import type { IOptions } from '@/components/RadioButton.vue'
 
 const dummyOptions: IOptions[] = [
-  {
-    id: 'pilihan 1',
-    name: 'Pilihan 1'
-  },
-  {
-    id: 'pilihan 2',
-    name: 'Pilihan 2'
-  },
-  {
-    id: 'pilihan 3',
-    name: 'Pilihan 3'
-  },
-  {
-    id: 'pilihan 4',
-    name: 'Pilihan 4'
-  },
-  {
-    id: 'pilihan 5',
-    name: 'Pilihan 5'
-  },
-  {
-    id: 'pilihan 6',
-    name: 'Pilihan 6'
-  },
-  {
-    id: 'pilihan 7',
-    name: 'Pilihan 7'
-  }
+  { id: 'pilihan 1', name: 'Pilihan 1' },
+  { id: 'pilihan 2', name: 'Pilihan 2' },
+  { id: 'pilihan 3', name: 'Pilihan 3' },
+  { id: 'pilihan 4', name: 'Pilihan 4' },
+  { id: 'pilihan 5', name: 'Pilihan 5' },
+  { id: 'pilihan 6', name: 'Pilihan 6' },
+  { id: 'pilihan 7', name: 'Pilihan 7' }
 ]
 
 const meta = {
@@ -70,7 +49,32 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-  args: {}
+  args: {},
+  parameters: {
+    docs: {
+      source: {
+        code: `
+          <script setup>
+            const selected = ref()
+
+            const dummyOptions: IOptions[] = [
+              { id: 'pilihan 1', name: 'Pilihan 1' },
+              { id: 'pilihan 2', name: 'Pilihan 2' },
+              { id: 'pilihan 3', name: 'Pilihan 3' },
+              { id: 'pilihan 4', name: 'Pilihan 4' },
+              { id: 'pilihan 5', name: 'Pilihan 5' },
+              { id: 'pilihan 6', name: 'Pilihan 6' },
+              { id: 'pilihan 7', name: 'Pilihan 7' }
+            ]
+          </script>
+
+          <template>
+            <RadioButton v-model="selected" :options="dummyOptions" />
+          </template>
+        `
+      }
+    }
+  }
 }
 
 export const Small: Story = {
