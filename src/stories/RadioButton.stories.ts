@@ -57,7 +57,7 @@ export const Default: Story = {
           <script setup>
             const selected = ref()
 
-            const dummyOptions: IOptions[] = [
+            const dummyOptions = [
               { id: 'pilihan 1', name: 'Pilihan 1' },
               { id: 'pilihan 2', name: 'Pilihan 2' },
               { id: 'pilihan 3', name: 'Pilihan 3' },

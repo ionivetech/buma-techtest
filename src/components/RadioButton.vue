@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import FormGroup from '@/components/FormGroup.vue'
+import FormGroup from './FormGroup.vue'
 
 export interface IOptions {
   id: string | number

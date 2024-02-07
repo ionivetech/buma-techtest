@@ -1,6 +1,6 @@
 <script lang="ts" setup generic="T">
 import { ref, computed } from 'vue'
-import FormGroup from '@/components/FormGroup.vue'
+import FormGroup from './FormGroup.vue'
 import { onClickOutside } from '@vueuse/core'
 // Icons
 import { XCircle, ChevronDown } from 'lucide-vue-next'

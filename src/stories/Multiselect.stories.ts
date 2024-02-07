@@ -82,7 +82,7 @@ export const Default: Story = {
               }
             ])
 
-            const dummyData: IDummyData[] = [
+            const dummyData = [
               { id: 1, city: 'Jakarta' },
               { id: 2, city: 'Bekasi' },
               { id: 3, city: 'Bandung' },

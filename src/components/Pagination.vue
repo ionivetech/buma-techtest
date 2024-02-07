@@ -148,6 +148,7 @@ const toLastPage = () => (currentPage.value = totalPage.value)
         :class="{
           'pagination__page__button--active': page.isDisable
         }"
+        @click="currentPage = page.page"
       >
         {{ page.page }}
       </button>

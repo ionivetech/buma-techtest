@@ -1,0 +1,6 @@
+export { default as Button } from './Button.vue'
+export { default as FormGroup } from './FormGroup.vue'
+export { default as Modal } from './Modal.vue'
+export { default as MultipleSelect } from './MultipleSelect.vue'
+export { default as Pagination } from './Pagination.vue'
+export { default as RadioButton } from './RadioButton.vue'

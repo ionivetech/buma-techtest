@@ -1,46 +1,36 @@
-# buma-techtest
+<h1 align="center">Test UI</h1>
+<p align="center">
+  <a href="https://faridnugraha-ui.netlify.app/">DEMO</a>
+</p>
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+## Install
 
 ```sh
-pnpm install
+# Using NPM
+npm i farid-ui
+
+# Using Yarn
+yarn add farid-ui
 ```
 
-### Compile and Hot-Reload for Development
+## Styling
 
-```sh
-pnpm dev
+in `main.js` or `main.ts`
+
+```javascript
+import 'farid-ui/style.css'
 ```
 
-### Type-Check, Compile and Minify for Production
+## Usage
 
-```sh
-pnpm build
-```
+```vue
+<script lang="ts" setup>
+import { Button } from 'farid-ui'
+</script>
 
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-pnpm lint
+<template>
+  <div>
+    <Button label="Click Me" />
+  </div>
+</template>
 ```
